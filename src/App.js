@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Todo from "./Todo";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    list: [
+      { id: 1, content: "eating breakfast ⏰", status: "completed" },
+      { id: 2, content: "eating lunch ⏰", status: "incompleted" },
+      { id: 3, content: "eating dinner ⏰", status: "incompleted" }
+    ]
+  };
   render() {
+    const { list } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Todo list={list} />
       </div>
     );
   }
