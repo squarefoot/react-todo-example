@@ -1,4 +1,4 @@
-import SearchBar from "./index";
+import SearchBar from "../SearchBar";
 
 describe("<SearchBar />", () => {
   it("should render an input field", () => {
