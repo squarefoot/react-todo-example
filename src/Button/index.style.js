@@ -11,9 +11,6 @@ export const ButtonWrapper = styled.button`
   &[disabled] {
     cursor: no-drop;
   }
-  &.loading {
-    border: 1px solid #ccc;
-  }
   &.default {
     color: inherit;
     background-color: #ccc;
