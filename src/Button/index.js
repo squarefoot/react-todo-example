@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { ButtonWrapper } from "./index.style";
 
 const Button = ({ children, type, onClick }) => {
-  const className = classNames(typeClass);
+  const className = classNames(type);
   return (
     <ButtonWrapper
       className={className}
