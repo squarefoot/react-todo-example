@@ -8,7 +8,7 @@ class SearchBar extends Component {
   };
 
   setKeyword = (keyword = "") => {
-    this.setState(() => ({ keyword }));
+    this.setState({ keyword });
   };
 
   handleKeywordChanged = e => {
