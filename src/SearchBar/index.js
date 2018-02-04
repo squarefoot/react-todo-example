@@ -11,7 +11,7 @@ class SearchBar extends PureComponent {
     this.setState(() => ({ keyword }));
   };
 
-  handleChange = e => {
+  handleKeywordChange = e => {
     const keyword = e.target.value;
     this.setKeyword(keyword);
     if (this.props.keywordChanged) {
@@ -27,7 +27,7 @@ class SearchBar extends PureComponent {
 
   renderInput = () => {
     const { keyword } = this.state;
-    return <input value={keyword} onChange={this.handleChange} />;
+    return <input value={keyword} onChange={this.handleKeywordChange} />;
   };
 
   render() {
