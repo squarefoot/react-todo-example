@@ -3,9 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { ButtonWrapper } from "./index.style";
 
-const Button = ({ children, type, isLoading, disabled, onClick }) => {
-  const typeClass = isLoading ? "loading" : type;
-  const isDisabled = isLoading ? true : false;
+const Button = ({ children, type, onClick }) => {
   const className = classNames(typeClass);
   return (
     <ButtonWrapper
