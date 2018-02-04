@@ -8,7 +8,6 @@ const Button = ({ children, type, onClick }) => {
   return (
     <ButtonWrapper
       className={className}
-      disabled={isDisabled}
       onClick={onClick}
     >
       {children}
