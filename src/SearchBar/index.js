@@ -11,7 +11,7 @@ class SearchBar extends Component {
     this.setState(() => ({ keyword }));
   };
 
-  handleKeywordChange = e => {
+  handleKeywordChanged = e => {
     const keyword = e.target.value;
     this.setKeyword(keyword);
     if (this.props.keywordChanged) {
@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
   renderInput = () => {
     const { keyword } = this.state;
-    return <input value={keyword} onChange={this.handleKeywordChange} />;
+    return <input value={keyword} onChange={this.handleKeywordChanged} />;
   };
 
   render() {
