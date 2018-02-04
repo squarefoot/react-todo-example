@@ -12,7 +12,7 @@ class SearchBar extends PureComponent {
   };
 
   handleChange = e => {
-    const keyword = e.target.value
+    const keyword = e.target.value;
     this.setKeyword(keyword);
     if (this.props.keywordChanged) {
       this.props.keywordChanged(keyword);
