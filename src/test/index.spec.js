@@ -1,5 +1,5 @@
 import SearchBar from "../SearchBar";
-import Sinon from 'sinon'
+import Sinon from "sinon";
 
 describe("<SearchBar />", () => {
   it("should render an input field", () => {
@@ -28,8 +28,8 @@ describe("<SearchBar />", () => {
   });
 
   it("should invoke keyword change event when keyword changed", () => {
-    const keywordChanged = Sinon.spy()
-    const Wrapper = shallow(<SearchBar keywordChanged={keywordChanged}/>);
+    const keywordChanged = Sinon.spy();
+    const Wrapper = shallow(<SearchBar keywordChanged={keywordChanged} />);
     const input = Wrapper.find("input");
     const mockChangeEvent = {
       target: {
@@ -37,8 +37,7 @@ describe("<SearchBar />", () => {
       }
     };
     input.simulate("change", mockChangeEvent);
-    expect(keywordChanged.calledOnce).to.equal(true)
-    expect(keywordChanged.calledWith('input event')).to.equal(true)
-    
+    expect(keywordChanged.calledOnce).to.equal(true);
+    expect(keywordChanged.calledWith("input event")).to.equal(true);
   });
 });
