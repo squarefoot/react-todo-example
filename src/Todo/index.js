@@ -47,8 +47,6 @@ class Todo extends Component {
     return <ul>{renderList}</ul>
   }
 
-  renderEmptyContainer = () => 'No Items'
-
   renderActionBar = type => {
     return <ActionBar type={type} onChange={this.updateShowType} />
   }
