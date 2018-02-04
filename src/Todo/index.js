@@ -10,7 +10,7 @@ import ActionBar from '../ActionBar'
 class Todo extends Component {
 
   state = {
-    keyword: this.props.keyword,
+    keyword: '',
     list: this.props.list,
     showType: this.props.showType,
   }
