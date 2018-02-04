@@ -13,19 +13,17 @@ const Button = ({ children, type, isLoading, disabled, onClick }) => {
       disabled={isDisabled}
       onClick={onClick}
     >
-      {isLoading ? "loading..." : children}
+      {children}
     </ButtonWrapper>
   );
 };
 
 Button.propTypes = {
   type: PropTypes.string,
-  isLoading: PropTypes.bool
 };
 
 Button.defaultProps = {
   type: "default",
-  isLoading: false
 };
 
 export default Button;
