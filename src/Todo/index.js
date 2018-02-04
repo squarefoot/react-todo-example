@@ -84,9 +84,9 @@ class Todo extends Component {
     const { width } = this.props
     return (
       <TodoWrapper width={width}>
-        {list.length > 0 && this.renderSearchBar(keyword)}
-        {list.length > 0 ? this.renderTodoList(list, showType, keyword) : this.renderEmptyContainer()}
-        {list.length > 0 && this.renderActionBar(showType)}
+        {this.renderSearchBar(keyword)}
+        {this.renderTodoList(list, showType, keyword)}
+        {this.renderActionBar(showType)}
       </TodoWrapper>
     )
   }
