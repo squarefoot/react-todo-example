@@ -1,8 +1,8 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { SearchBarWrapper } from "./index.style";
 
-class SearchBar extends PureComponent {
+class SearchBar extends Component {
   state = {
     keyword: this.props.keyword
   };

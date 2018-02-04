@@ -1,10 +1,10 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { ActionBarWrapper } from './index.style'
 
 import Button from '../Button'
 
-class ActionBar extends PureComponent {
+class ActionBar extends Component {
 
   getClassByActionType = (buttonType, actionType) => {
     return actionType === buttonType ? 'primary' : 'default'
