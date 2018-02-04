@@ -17,7 +17,7 @@ class Todo extends Component {
 
   renderSearchBar = keyword => {
     return (
-      <SearchBar keyword={keyword} onChange={this.updateKeyward} />
+      <SearchBar keyword={keyword} keywordChanged={this.updateKeyward} />
     )
   }
 
