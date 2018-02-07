@@ -7,6 +7,6 @@ yarn start
 ```
 
 ### Test
-``` base
+``` bash
 yarn test
 ```
