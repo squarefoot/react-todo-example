@@ -1,7 +1,7 @@
 ### Setup
 
 ``` bash
-git clone git@github.com:lnwu/react-todo-example.git
+git clone git@github.com:squarefoot/react-todo-example.git
 yarn install
 yarn start
 ```
