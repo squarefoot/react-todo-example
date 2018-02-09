@@ -1,6 +1,8 @@
-import SearchBar from "../SearchBar";
 import Sinon from "sinon";
-import Button from '../Button'
+
+import SearchBar from "../SearchBar";
+import Button from "../Button";
+import Item from "../Item";
 
 describe("<SearchBar />", () => {
     it("should render an input field", () => {
@@ -50,7 +52,7 @@ describe("<SearchBar />", () => {
     it("should clear keyword input field when add button is clicked", () => {
         const Wrapper = shallow(<SearchBar keyword="test"/>);
         const addButton = Wrapper.find(Button);
-        addButton.simulate('click');
+        addButton.simulate("click");
         expect(Wrapper.state("keyword")).to.equal("");
     });
 
@@ -58,8 +60,28 @@ describe("<SearchBar />", () => {
         const addTodo = Sinon.spy();
         const Wrapper = shallow(<SearchBar keyword="test" addTodo={addTodo}/>);
         const addButton = Wrapper.find(Button);
-        addButton.simulate('click');
+        addButton.simulate("click");
         expect(addTodo.calledOnce).to.equal(true);
         expect(addTodo.calledWith("test")).to.equal(true);
+    });
+});
+
+describe("<Item />", () => {
+    it("should render a li field", () => {
+        const Wrapper = shallow(<Item/>);
+        expect(Wrapper.find("li").exists()).to.equal(true);
+    });
+
+    it("should render a li field with value", () => {
+        const Wrapper = shallow(<Item>test</Item>);
+        expect(Wrapper.find("li").text()).to.equal("test");
+    });
+
+    it("should invoke on click event when item is clicked", () => {
+        const onClick = Sinon.spy();
+        const Wrapper = shallow(<Item onClick={onClick}/>);
+        const input = Wrapper.find("li");
+        input.simulate("click");
+        expect(onClick.calledOnce).to.equal(true);
     });
 });

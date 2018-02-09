@@ -20,15 +20,15 @@ class Item extends Component {
     }
   };
 
-  splitContent = (content, keywrod) => {
+  splitContent = (content, keyword) => {
     let contentList = content
-      .split(keywrod)
+      .split(keyword)
       .map(atom => <span key={Randomize("a0", 10)}>{atom}</span>)
-      .reduce((prev, current) => [prev, this.renderKeywrod(keywrod), current]);
+      .reduce((prev, current) => [prev, this.renderKeyword(keyword), current]);
     return <Fragment>{contentList}</Fragment>;
   };
 
-  renderKeywrod = keyword => {
+  renderKeyword = keyword => {
     return (
       <span className="highlight" key={Randomize("a0", 10)}>
         {keyword}
