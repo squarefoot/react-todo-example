@@ -58,7 +58,6 @@ class SearchBar extends Component {
                 {this.renderInput()}
                 {this.renderAddButton()}
             </Fragment>
-
         )
     };
 
