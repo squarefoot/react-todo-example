@@ -49,7 +49,7 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
-  status: "incompleted"
+  status: "incomplete"
 };
 
 export default Item;

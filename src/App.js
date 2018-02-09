@@ -6,8 +6,8 @@ class App extends Component {
   state = {
     list: [
       { id: 1, content: "eating breakfast ⏰", status: "completed" },
-      { id: 2, content: "eating lunch ⏰", status: "incompleted" },
-      { id: 3, content: "eating dinner ⏰", status: "incompleted" }
+      { id: 2, content: "eating lunch ⏰", status: "incomplete" },
+      { id: 3, content: "eating dinner ⏰", status: "incomplete" }
     ]
   };
   render() {

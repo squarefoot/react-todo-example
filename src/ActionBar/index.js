@@ -31,7 +31,7 @@ class ActionBar extends Component {
       <Fragment>
         {this.renderActionButton('All', 'all', actionType)}
         {this.renderActionButton('Completed', 'completed', actionType)}
-        {this.renderActionButton('Incompleted', 'incompleted', actionType)}
+        {this.renderActionButton('Incomplete', 'incomplete', actionType)}
       </Fragment>
     )
   }

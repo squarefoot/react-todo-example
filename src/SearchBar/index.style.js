@@ -9,4 +9,6 @@ export const SearchBarWrapper =  styled.div`
       outline: none;
     }
   }
-`
+  display: flex;
+  justify-content: space-between;
+`;
