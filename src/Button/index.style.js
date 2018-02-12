@@ -19,4 +19,7 @@ export const ButtonWrapper = styled.button`
     color: #fff;
     background-color: lightgreen;
   }
+  &.transparent {
+    background-color: transparent;
+  }
 `;

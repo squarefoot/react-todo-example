@@ -84,4 +84,17 @@ describe("<Item />", () => {
         input.simulate("click");
         expect(onClick.calledOnce).to.equal(true);
     });
+
+    it("should render a delete button", () => {
+        const Wrapper = shallow(<Item/>);
+        expect(Wrapper.find(Button).exists()).to.equal(true);
+    });
+
+    it("should invoke on delete event when delete button is clicked", () => {
+        const onDeleteClick = Sinon.spy();
+        const Wrapper = shallow(<Item onDeleteClick={onDeleteClick}/>);
+        const button = Wrapper.find(Button);
+        button.simulate("click");
+        expect(onDeleteClick.calledOnce).to.equal(true);
+    });
 });

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ItemWrapper =  styled.div`
+export const ItemWrapper = styled.div`
   li {
     &:hover {
       cursor: pointer;
@@ -12,4 +12,7 @@ export const ItemWrapper =  styled.div`
   .highlight {
     background-color: yellow;
   }
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;

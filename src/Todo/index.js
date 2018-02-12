@@ -27,22 +27,22 @@ class Todo extends Component {
             case 'all':
                 renderList = list
                     .filter(item => item.content.includes(keyword))
-                    .map(item => this.renderItem(item))
+                    .map(item => this.renderItem(item));
                 break;
             case 'completed':
                 renderList = list
                     .filter(item => item.status === 'completed' && item.content.includes(keyword))
-                    .map(item => this.renderItem(item))
+                    .map(item => this.renderItem(item));
                 break;
             case 'incomplete':
                 renderList = list
                     .filter(item => item.status === 'incomplete' && item.content.includes(keyword))
-                    .map(item => this.renderItem(item))
+                    .map(item => this.renderItem(item));
                 break;
             default:
                 renderList = list
                     .filter(item => item.content.includes(keyword))
-                    .map(item => this.renderItem(item))
+                    .map(item => this.renderItem(item));
         }
         return <ul>{renderList}</ul>
     };
@@ -56,6 +56,7 @@ class Todo extends Component {
             key={item.id}
             status={item.status}
             onClick={() => this.handleItemClicked(item.id)}
+            onDeleteClick={() => this.handleItemDeleteClicked(item.id)}
             keyword={this.state.keyword}>
             {item.content}
         </Item>
@@ -69,6 +70,12 @@ class Todo extends Component {
         this.setState({list})
     };
 
+    handleItemDeleteClicked = id => {
+        const {list} = this.state;
+        let newList = list.filter(item => item.id !== id);
+        this.setState({list: newList})
+    };
+
     updateKeyword = keyword => {
         this.setState(() => ({keyword}))
     };
@@ -79,7 +86,7 @@ class Todo extends Component {
 
     addTodo = todo => {
         const {list} = this.state;
-        list.push({ id: list.length + 1 , content: todo, status: "incomplete" });
+        list.push({id: list.length + 1, content: todo, status: "incomplete"});
         this.setState({list})
     };
 
