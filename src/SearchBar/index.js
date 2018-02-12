@@ -46,9 +46,9 @@ class SearchBar extends Component {
 
     renderAddButton = () => {
         return <Button
-            type={'primary'}
+            type={'transparent'}
             onClick={e => this.handleAddEvent(e)}>
-            {'Add'}
+            {'➕'}
         </Button>
     };
 
