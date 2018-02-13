@@ -8,11 +8,7 @@
     "classnames": "^2.2.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.17.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.1.0",
     "mocha": "^5.0.0",
-    "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
@@ -20,17 +16,9 @@
     "styled-components": "^3.1.5"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "NODE_ENV=test mocha -r babel-register -r src/test/init.js src/**/*.spec.js",
     "eject": "react-scripts eject"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --trailing-comma es5 --write",
-      "eslint --fix --quiet",
-      "git add"
-    ]
   }
 }
