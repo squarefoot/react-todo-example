@@ -1,10 +1,42 @@
-import React from "react";
-import { expect } from "chai";
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+const chai = require('chai');
+const enzyme = require('enzyme');
+const React = require('react');
+const chaiEnzyme = require('chai-enzyme');
+const sinonChai = require('sinon-chai');
+const sinon = require('sinon');
+const jsdom = require('jsdom');
+const ignoreStyles = require('ignore-styles');
+ignoreStyles.default([
+  ...ignoreStyles.DEFAULT_EXTENSIONS,
+  '.eot',
+  '.woff',
+  '.woff2',
+  '.ttf',
+  '.ico',
+]);
 
-Enzyme.configure({ adapter: new Adapter() });
+chai.use(sinonChai);
+chai.use(chaiEnzyme());
 
-global.expect = expect;
-global.shallow = shallow;
+chai.config.includeStack = true;
+
+global.expect = chai.expect;
+
+global.sinon = sinon;
+
+global.shallow = enzyme.shallow;
+global.mount = enzyme.mount;
+global.render = enzyme.render;
+
 global.React = React;
+
+global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.window = document.defaultView;
+global.navigator = global.window.navigator;
+global.window.matchMedia =
+  window.matchMedia ||
+  (() => {
+    return { matches: false, addListener: () => {}, removeListener: () => {} };
+  });
+global.window.location = {};
+global.window.devicePixelRatio = 1;
