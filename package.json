@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "precommit": "lint-staged",
+    "prepush": "yarn test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "NODE_ENV=test mocha -r babel-register -r src/test/init.js src/**/*.spec.js",
