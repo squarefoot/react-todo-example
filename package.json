@@ -32,8 +32,8 @@
       "**/*.style.js",
       "**/test*",
       "**/*config*",
-      "src/*/index.js",
-      "build/*"
+      "build/*",
+      "src/common/replace-module-paths.js"
     ],
     "include": [
       "**/*.js"
