@@ -7,7 +7,7 @@
     "prepush": "yarn test",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "NODE_ENV=test mocha -r babel-register -r src/test/init.js src/**/*.spec.js",
+    "test": "nyc --all --require babel-register mocha --require src/test/init.js --require ignore-styles src/**/*.spec.js",
     "eject": "react-scripts eject"
   },
   "lint-staged": {
@@ -19,6 +19,24 @@
     "*.json": [
       "eslint --ext .json --fix",
       "git add"
+    ]
+  },
+  "nyc": {
+    "check-coverage": false,
+    "lines": 40,
+    "statements": 40,
+    "functions": 20,
+    "branches": 40,
+    "exclude": [
+      "**/*.spec.js",
+      "**/*.style.js",
+      "**/test*",
+      "**/*config*",
+      "src/*/index.js",
+      "build/*"
+    ],
+    "include": [
+      "**/*.js"
     ]
   },
   "dependencies": {
@@ -115,7 +133,7 @@
     "lint-staged": "^4.0.4",
     "mocha": "^3.2.0",
     "node-find-folder": "^0.1.30",
-    "nyc": "^10.2.0",
+    "nyc": "^11.4.1",
     "postcss-loader": "^1.2.1",
     "prettier": "1.4.2",
     "react": "^15.6.2",
